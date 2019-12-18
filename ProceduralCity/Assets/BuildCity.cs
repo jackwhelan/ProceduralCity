@@ -5,6 +5,7 @@ using UnityEngine;
 public class BuildCity : MonoBehaviour
 {
     public GameObject[] buildings;
+    public GameObject[] trees;
     public GameObject xStreet;
     public GameObject zStreet;
     public GameObject CrossRoad;
@@ -96,7 +97,11 @@ public class BuildCity : MonoBehaviour
                 else if(result < 10)
                 {
                     Instantiate(buildings[5],pos,Quaternion.identity);
-                    
+                    int hasTree = Random.Range(0,2);
+                    if (hasTree == 0)
+                    {
+                        Instantiate(trees[0],pos,Quaternion.identity);
+                    }
                 }
             }
         }
