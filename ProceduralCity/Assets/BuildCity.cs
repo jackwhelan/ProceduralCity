@@ -31,13 +31,17 @@ public class BuildCity : MonoBehaviour
                 {
                     Instantiate(buildings[2],pos,Quaternion.identity);
                 }
-                else if(result < 8)
+                else if(result < 7)
                 {
                     Instantiate(buildings[3],pos,Quaternion.identity);
                 }
-                else if(result < 10)
+                else if(result < 8)
                 {
                     Instantiate(buildings[4],pos,Quaternion.identity);
+                }
+                else if(result < 10)
+                {
+                    Instantiate(buildings[5],pos,Quaternion.identity);
                 }
             }
         }
