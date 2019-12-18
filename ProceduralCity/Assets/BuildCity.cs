@@ -15,9 +15,28 @@ public class BuildCity : MonoBehaviour
         {
             for(int w = 0; w < mapWidth; w++)
             {
+                int result = (int)(Mathf.PerlinNoise(w/10,h/10) * 10);
                 Vector3 pos = new Vector3(w * buildingSpacing,0,h * buildingSpacing);
-                int rn = Random.Range(0,buildings.Length);
-                Instantiate(buildings[rn],pos,Quaternion.identity);
+                if(result < 2)
+                {
+                    Instantiate(buildings[0],pos,Quaternion.identity);
+                }
+                else if(result < 4)
+                {
+                    Instantiate(buildings[1],pos,Quaternion.identity);
+                }
+                else if(result < 6)
+                {
+                    Instantiate(buildings[2],pos,Quaternion.identity);
+                }
+                else if(result < 8)
+                {
+                    Instantiate(buildings[3],pos,Quaternion.identity);
+                }
+                else if(result < 10)
+                {
+                    Instantiate(buildings[4],pos,Quaternion.identity);
+                }
             }
         }
     }
