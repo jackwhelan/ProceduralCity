@@ -12,7 +12,7 @@ public class BuildCity : MonoBehaviour
     public int mapWidth = 20;
     public int mapHeight = 20;
     public int[,] mapgrid;
-    public int buildingSpacing = 3;
+    public int buildingSpacing = 4;
 
     void Start()
     {
@@ -97,10 +97,11 @@ public class BuildCity : MonoBehaviour
                 else if(result < 10)
                 {
                     Instantiate(buildings[5],pos,Quaternion.identity);
-                    int hasTree = Random.Range(0,2);
+                    int hasTree = Random.Range(0,1);
                     if (hasTree == 0)
                     {
-                        Instantiate(trees[0],pos,Quaternion.identity);
+                        Vector3 treePosVariance = new Vector3(Random.Range(-1,1), 0, Random.Range(-1,1));
+                        Instantiate(trees[0], pos+treePosVariance, Quaternion.identity);
                     }
                 }
             }
