@@ -15,7 +15,7 @@ public class BuildCity : MonoBehaviour
         {
             for(int w = 0; w < mapWidth; w++)
             {
-                int result = (int)(Mathf.PerlinNoise(w/10,h/10) * 10);
+                int result = (int)(Mathf.PerlinNoise(w/10.0f,h/10.0f) * 10);
                 Vector3 pos = new Vector3(w * buildingSpacing,0,h * buildingSpacing);
                 if(result < 2)
                 {
