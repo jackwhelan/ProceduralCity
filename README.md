@@ -20,11 +20,11 @@ The main reason I decided to do procedural city generation as my project is I am
 ## Proposed Approach
 
 - [x] Research Procedural Generation Using Perlin Noise.
-- [ ] Implement an initial generation of basic shapes using Perlin Noise.
-- [ ] Diversify the generation into clusters of different shapes by manipulating the Perlin Noise.
-- [ ] Add a character to explore the generations.
-- [ ] Add park/grassy areas to the generations.
-- [ ] Add roads/streets to the generations which will punctuate the buildings and parks.
+- [x] Implement an initial generation of basic shapes using Perlin Noise.
+- [x] Diversify the generation into clusters of different shapes by manipulating the Perlin Noise.
+- [x] Add a character to explore the generations.
+- [x] Add park/grassy areas to the generations.
+- [x] Add roads/streets to the generations which will punctuate the buildings and parks.
 - [ ] Create models for buildings, roads, etc. to replace placeholder objects.
 - [ ] Attempt to add street lights/bins etc. to the sidewalks.
 - [ ] Increase the complexity of generations through the introduction of my own personal algorithms/functions.
