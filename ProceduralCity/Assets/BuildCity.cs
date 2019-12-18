@@ -13,6 +13,8 @@ public class BuildCity : MonoBehaviour
     public int mapHeight = 20;
     public int[,] mapgrid;
     public int buildingSpacing = 4;
+    Vector3 buildingVariance;
+    Vector3 treePosVariance;
 
     void Start()
     {
@@ -76,31 +78,36 @@ public class BuildCity : MonoBehaviour
                 }
                 else if(result < 1)
                 {
-                    Instantiate(buildings[0],pos,Quaternion.identity);
+                    buildingVariance = new Vector3(Random.Range(-1,1), 0, Random.Range(-1,1));
+                    Instantiate(buildings[0],pos+buildingVariance,Quaternion.identity);
                 }
                 else if(result < 2)
                 {
-                    Instantiate(buildings[1],pos,Quaternion.identity);
+                    buildingVariance = new Vector3(Random.Range(-1,1), 0, Random.Range(-1,1));
+                    Instantiate(buildings[1],pos+buildingVariance,Quaternion.identity);
                 }
                 else if(result < 4)
                 {
-                    Instantiate(buildings[2],pos,Quaternion.identity);
+                    buildingVariance = new Vector3(Random.Range(-1,1), 0, Random.Range(-1,1));
+                    Instantiate(buildings[2],pos+buildingVariance,Quaternion.identity);
                 }
                 else if(result < 6)
                 {
-                    Instantiate(buildings[3],pos,Quaternion.identity);
+                    buildingVariance = new Vector3(Random.Range(-1,1), 0, Random.Range(-1,1));
+                    Instantiate(buildings[3],pos+buildingVariance,Quaternion.identity);
                 }
                 else if(result < 7)
                 {
-                    Instantiate(buildings[4],pos,Quaternion.identity);
+                    buildingVariance = new Vector3(Random.Range(-1,1), 0, Random.Range(-1,1));
+                    Instantiate(buildings[4],pos+buildingVariance,Quaternion.identity);
                 }
                 else if(result < 10)
                 {
                     Instantiate(buildings[5],pos,Quaternion.identity);
-                    int hasTree = Random.Range(0,1);
+                    int hasTree = Random.Range(0,2);
                     if (hasTree == 0)
                     {
-                        Vector3 treePosVariance = new Vector3(Random.Range(-1,1), 0, Random.Range(-1,1));
+                        treePosVariance = new Vector3(Random.Range(-1,1), 0, Random.Range(-1,1));
                         Instantiate(trees[0], pos+treePosVariance, Quaternion.identity);
                     }
                 }
