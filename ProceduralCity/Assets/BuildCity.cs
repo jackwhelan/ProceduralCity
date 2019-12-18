@@ -96,6 +96,7 @@ public class BuildCity : MonoBehaviour
                 else if(result < 10)
                 {
                     Instantiate(buildings[5],pos,Quaternion.identity);
+                    
                 }
             }
         }
