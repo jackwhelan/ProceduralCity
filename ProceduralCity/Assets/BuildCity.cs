@@ -9,12 +9,15 @@ public class BuildCity : MonoBehaviour
     public GameObject xStreet;
     public GameObject zStreet;
     public GameObject CrossRoad;
+    Vector3 buildingVariance;
+    Vector3 treePosVariance;
     public int mapWidth = 20;
     public int mapHeight = 20;
     public int[,] mapgrid;
     public int buildingSpacing = 4;
-    Vector3 buildingVariance;
-    Vector3 treePosVariance;
+    public bool Enable_Trees = true;
+    public bool Enable_Tree_Position_Variance = true;
+    public bool Enable_Building_Position_Variance = true;
 
     void Start()
     {
@@ -78,37 +81,79 @@ public class BuildCity : MonoBehaviour
                 }
                 else if(result < 1)
                 {
-                    buildingVariance = new Vector3(Random.Range(-1,1), 0, Random.Range(-1,1));
-                    Instantiate(buildings[0],pos+buildingVariance,Quaternion.identity);
+                    if(Enable_Building_Position_Variance)
+                    {
+                        buildingVariance = new Vector3(Random.Range(-1,1), 0, Random.Range(-1,1));
+                        Instantiate(buildings[0],pos+buildingVariance,Quaternion.identity);
+                    }
+                    else
+                    {
+                        Instantiate(buildings[0],pos,Quaternion.identity);
+                    }
                 }
                 else if(result < 2)
                 {
-                    buildingVariance = new Vector3(Random.Range(-1,1), 0, Random.Range(-1,1));
-                    Instantiate(buildings[1],pos+buildingVariance,Quaternion.identity);
+                    if(Enable_Building_Position_Variance)
+                    {
+                        buildingVariance = new Vector3(Random.Range(-1,1), 0, Random.Range(-1,1));
+                        Instantiate(buildings[1],pos+buildingVariance,Quaternion.identity);
+                    }
+                    else
+                    {
+                        Instantiate(buildings[1],pos,Quaternion.identity);
+                    }
                 }
                 else if(result < 4)
                 {
-                    buildingVariance = new Vector3(Random.Range(-1,1), 0, Random.Range(-1,1));
-                    Instantiate(buildings[2],pos+buildingVariance,Quaternion.identity);
+                    if(Enable_Building_Position_Variance)
+                    {
+                        buildingVariance = new Vector3(Random.Range(-1,1), 0, Random.Range(-1,1));
+                        Instantiate(buildings[2],pos+buildingVariance,Quaternion.identity);
+                    }
+                    else
+                    {
+                        Instantiate(buildings[2],pos,Quaternion.identity);
+                    }
                 }
                 else if(result < 6)
                 {
-                    buildingVariance = new Vector3(Random.Range(-1,1), 0, Random.Range(-1,1));
-                    Instantiate(buildings[3],pos+buildingVariance,Quaternion.identity);
+                    if(Enable_Building_Position_Variance)
+                    {
+                        buildingVariance = new Vector3(Random.Range(-1,1), 0, Random.Range(-1,1));
+                        Instantiate(buildings[3],pos+buildingVariance,Quaternion.identity);
+                    }
+                    else
+                    {
+                        Instantiate(buildings[3],pos,Quaternion.identity);
+                    }
                 }
                 else if(result < 7)
                 {
-                    buildingVariance = new Vector3(Random.Range(-1,1), 0, Random.Range(-1,1));
-                    Instantiate(buildings[4],pos+buildingVariance,Quaternion.identity);
+                    if(Enable_Building_Position_Variance)
+                    {
+                        buildingVariance = new Vector3(Random.Range(-1,1), 0, Random.Range(-1,1));
+                        Instantiate(buildings[4],pos+buildingVariance,Quaternion.identity);
+                    }
+                    else
+                    {
+                        Instantiate(buildings[4],pos,Quaternion.identity);
+                    }
                 }
                 else if(result < 10)
                 {
                     Instantiate(buildings[5],pos,Quaternion.identity);
                     int hasTree = Random.Range(0,2);
-                    if (hasTree == 0)
+                    if (hasTree == 0 && Enable_Trees)
                     {
-                        treePosVariance = new Vector3(Random.Range(-1,1), 0, Random.Range(-1,1));
-                        Instantiate(trees[0], pos+treePosVariance, Quaternion.identity);
+                        if (Enable_Tree_Position_Variance)
+                        {
+                            treePosVariance = new Vector3(Random.Range(-1,1), 0, Random.Range(-1,1));
+                            Instantiate(trees[0], pos+treePosVariance, Quaternion.identity);
+                        }
+                        else
+                        {
+                            Instantiate(trees[0], pos, Quaternion.identity);
+                        }
                     }
                 }
             }
