@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BuildCity : MonoBehaviour
 {
-    public GameObject[] buildings;
+    public GameObject[] features;
     public GameObject[] trees;
     public GameObject xStreet;
     public GameObject zStreet;
@@ -13,7 +13,7 @@ public class BuildCity : MonoBehaviour
     Vector3 treePosVariance;
     public int mapWidth = 20;
     public int mapHeight = 20;
-    public int[,] mapgrid;
+    public int[,] map;
     public int buildingSpacing = 4;
     public bool Enable_Trees = true;
     public bool Enable_Tree_Position_Variance = true;
@@ -22,14 +22,14 @@ public class BuildCity : MonoBehaviour
 
     void Start()
     {
-        mapgrid = new int[mapWidth, mapHeight];
-        float seed = Random.Range(0, 100);
+        map = new int[mapWidth, mapHeight];
+        float seed = Random.Range(0, 1000);
 
         for(int h = 0; h < mapHeight; h++)
         {
             for(int w = 0; w < mapWidth; w++)
             {
-                mapgrid[w,h] = (int) (Mathf.PerlinNoise(w / 10.0f + seed, h / 10.0f + seed) * 10);
+                map[w,h] = (int) (Mathf.PerlinNoise(w / 10.0f + seed, h / 10.0f + seed) * 10);
             }
         }
 
@@ -38,7 +38,7 @@ public class BuildCity : MonoBehaviour
         {
             for (int h = 0; h < mapHeight; h++)
             {
-                mapgrid[x,h] = -1;
+                map[x,h] = -1;
             }
             x += Random.Range(3,3);
             if(x >= mapWidth) break;
@@ -49,13 +49,13 @@ public class BuildCity : MonoBehaviour
         {
             for (int w = 0; w < mapWidth; w++)
             {
-                if (mapgrid[w,z] == -1)
+                if (map[w,z] == -1)
                 {
-                    mapgrid[w,z] = -3;
+                    map[w,z] = -3;
                 }
                 else
                 {
-                    mapgrid[w,z] = -2;
+                    map[w,z] = -2;
                 }
             }
             z += Random.Range(2,20);
@@ -66,7 +66,7 @@ public class BuildCity : MonoBehaviour
         {
             for(int w = 0; w < mapWidth; w++)
             {
-                int result = mapgrid[w,h];
+                int result = map[w,h];
                 Vector3 pos = new Vector3(w * buildingSpacing, 0, h * buildingSpacing);
                 if(result < -2)
                 {
@@ -79,7 +79,7 @@ public class BuildCity : MonoBehaviour
                     {
                         if(Random.Range(-1, 1) == 1)
                         {
-                            Instantiate(buildings[2],pos + new Vector3(0, 4, 0),Quaternion.identity);
+                            Instantiate(features[6],pos + new Vector3(0, 4, 0),Quaternion.identity);
                         }
                     }
                 }
@@ -90,7 +90,7 @@ public class BuildCity : MonoBehaviour
                     {
                         if(Random.Range(0, 10) >= 9)
                         {
-                            Instantiate(buildings[2],pos + new Vector3(0, 4, 0),Quaternion.identity);
+                            Instantiate(features[6],pos + new Vector3(0, 4, 0),Quaternion.identity);
                         }
                     }
                 }
@@ -99,12 +99,12 @@ public class BuildCity : MonoBehaviour
                     if(Enable_Building_Position_Variance)
                     {
                         buildingVariance = new Vector3(Random.Range(-1,1), 1.5f, Random.Range(-1,1));
-                        Instantiate(buildings[0],pos+buildingVariance,Quaternion.identity);
+                        Instantiate(features[0],pos+buildingVariance,Quaternion.identity);
                     }
                     else
                     {
                         buildingVariance = new Vector3(0, 0, 0);
-                        Instantiate(buildings[0],pos+buildingVariance,Quaternion.identity);
+                        Instantiate(features[0],pos+buildingVariance,Quaternion.identity);
                     }
                 }
                 else if(result < 2)
@@ -112,11 +112,11 @@ public class BuildCity : MonoBehaviour
                     if(Enable_Building_Position_Variance)
                     {
                         buildingVariance = new Vector3(Random.Range(-1,1), 0, Random.Range(-1,1));
-                        Instantiate(buildings[1],pos+buildingVariance,Quaternion.identity);
+                        Instantiate(features[1],pos+buildingVariance,Quaternion.identity);
                     }
                     else
                     {
-                        Instantiate(buildings[1],pos,Quaternion.identity);
+                        Instantiate(features[1],pos,Quaternion.identity);
                     }
                 }
                 else if(result < 4)
@@ -124,11 +124,11 @@ public class BuildCity : MonoBehaviour
                     if(Enable_Building_Position_Variance)
                     {
                         buildingVariance = new Vector3(Random.Range(-1,1), 0, Random.Range(-1,1));
-                        Instantiate(buildings[2],pos+buildingVariance,Quaternion.identity);
+                        Instantiate(features[2],pos+buildingVariance,Quaternion.identity);
                     }
                     else
                     {
-                        Instantiate(buildings[2],pos,Quaternion.identity);
+                        Instantiate(features[2],pos,Quaternion.identity);
                     }
                 }
                 else if(result < 6)
@@ -136,11 +136,11 @@ public class BuildCity : MonoBehaviour
                     if(Enable_Building_Position_Variance)
                     {
                         buildingVariance = new Vector3(Random.Range(-1,1), 0, Random.Range(-1,1));
-                        Instantiate(buildings[3],pos+buildingVariance,Quaternion.identity);
+                        Instantiate(features[3],pos+buildingVariance,Quaternion.identity);
                     }
                     else
                     {
-                        Instantiate(buildings[3],pos,Quaternion.identity);
+                        Instantiate(features[3],pos,Quaternion.identity);
                     }
                 }
                 else if(result < 7)
@@ -148,16 +148,16 @@ public class BuildCity : MonoBehaviour
                     if(Enable_Building_Position_Variance)
                     {
                         buildingVariance = new Vector3(Random.Range(-1,1), 0, Random.Range(-1,1));
-                        Instantiate(buildings[4],pos+buildingVariance,Quaternion.identity);
+                        Instantiate(features[4],pos+buildingVariance,Quaternion.identity);
                     }
                     else
                     {
-                        Instantiate(buildings[4],pos,Quaternion.identity);
+                        Instantiate(features[4],pos,Quaternion.identity);
                     }
                 }
                 else if(result < 10)
                 {
-                    Instantiate(buildings[5],pos,Quaternion.identity);
+                    Instantiate(features[5],pos,Quaternion.identity);
                     int hasTree = Random.Range(0,2);
                     if (hasTree == 0 && Enable_Trees)
                     {
