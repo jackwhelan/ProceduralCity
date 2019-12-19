@@ -99,14 +99,12 @@ public class BuildCity : MonoBehaviour
                     if(Enable_Building_Position_Variance)
                     {
                         buildingVariance = new Vector3(Random.Range(-1,1), 1.5f, Random.Range(-1,1));
-                        Quaternion rot = Quaternion.Euler(-90, 0, 0);
-                        Instantiate(buildings[0],pos+buildingVariance,Quaternion.identity * rot);
+                        Instantiate(buildings[0],pos+buildingVariance,Quaternion.identity);
                     }
                     else
                     {
-                        buildingVariance = new Vector3(0, 1.5f, 0);
-                        Quaternion rot = Quaternion.Euler(-90, 0, 0);
-                        Instantiate(buildings[0],pos+buildingVariance,Quaternion.identity * rot);
+                        buildingVariance = new Vector3(0, 0, 0);
+                        Instantiate(buildings[0],pos+buildingVariance,Quaternion.identity);
                     }
                 }
                 else if(result < 2)
