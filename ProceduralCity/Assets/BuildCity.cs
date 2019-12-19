@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,6 +18,7 @@ public class BuildCity : MonoBehaviour
     public bool Enable_Trees = true;
     public bool Enable_Tree_Position_Variance = true;
     public bool Enable_Building_Position_Variance = true;
+    public bool Enable_Park_Benches = true;
 
     void Start()
     {
@@ -74,10 +75,24 @@ public class BuildCity : MonoBehaviour
                 else if(result < -1)
                 {
                     Instantiate(xStreet,pos,xStreet.transform.rotation);
+                    if(Enable_Park_Benches)
+                    {
+                        if(Random.Range(-1, 1) == 1)
+                        {
+                            Instantiate(buildings[2],pos + new Vector3(0, 4, 0),Quaternion.identity);
+                }
+                    }
                 }
                 else if(result < 0)
                 {
                     Instantiate(zStreet,pos,zStreet.transform.rotation);
+                    if(Enable_Park_Benches)
+                    {
+                        if(Random.Range(0, 10) >= 9)
+                        {
+                            Instantiate(buildings[2],pos + new Vector3(0, 4, 0),Quaternion.identity);
+                }
+                    }
                 }
                 else if(result < 1)
                 {
