@@ -77,9 +77,10 @@ public class BuildCity : MonoBehaviour
                     Instantiate(xStreet,pos,xStreet.transform.rotation);
                     if(Enable_Park_Benches)
                     {
-                        if(Random.Range(-1, 1) == 1)
+                        Quaternion benchRot = Quaternion.Euler(-90, -90, 0);
+                        if(Random.Range(0, 10) >= 9)
                         {
-                            Instantiate(features[6],pos + new Vector3(0, 4, 0),Quaternion.identity);
+                            Instantiate(features[6],pos + new Vector3(0, 0.1f, 1.5f),Quaternion.identity * benchRot);
                         }
                     }
                 }
@@ -88,9 +89,10 @@ public class BuildCity : MonoBehaviour
                     Instantiate(zStreet,pos,zStreet.transform.rotation);
                     if(Enable_Park_Benches)
                     {
+                        Quaternion benchRot = Quaternion.Euler(-90, 0, 0);
                         if(Random.Range(0, 10) >= 9)
                         {
-                            Instantiate(features[6],pos + new Vector3(0, 4, 0),Quaternion.identity);
+                            Instantiate(features[6],pos + new Vector3(1.5f, 0.1f, 0),Quaternion.identity * benchRot);
                         }
                     }
                 }
