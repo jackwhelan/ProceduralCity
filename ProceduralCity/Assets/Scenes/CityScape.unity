@@ -305,9 +305,13 @@ MonoBehaviour:
   zStreet: {fileID: 5524751970038805599, guid: 57cc9daf1a5bef84383e13c71ce2ad86, type: 3}
   CrossRoad: {fileID: 8555397460007563000, guid: aeeecfdb72d6b6244af848aedbc8dd63,
     type: 3}
-  mapWidth: 50
-  mapHeight: 50
+  mapWidth: 200
+  mapHeight: 200
   buildingSpacing: 4
+  Enable_Trees: 1
+  Enable_Tree_Position_Variance: 1
+  Enable_Building_Position_Variance: 1
+  Enable_Park_Benches: 1
 --- !u!4 &1527545343
 Transform:
   m_ObjectHideFlags: 0

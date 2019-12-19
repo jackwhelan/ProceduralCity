@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -80,7 +80,7 @@ public class BuildCity : MonoBehaviour
                         if(Random.Range(-1, 1) == 1)
                         {
                             Instantiate(buildings[2],pos + new Vector3(0, 4, 0),Quaternion.identity);
-                }
+                        }
                     }
                 }
                 else if(result < 0)
@@ -91,19 +91,22 @@ public class BuildCity : MonoBehaviour
                         if(Random.Range(0, 10) >= 9)
                         {
                             Instantiate(buildings[2],pos + new Vector3(0, 4, 0),Quaternion.identity);
-                }
+                        }
                     }
                 }
                 else if(result < 1)
                 {
                     if(Enable_Building_Position_Variance)
                     {
-                        buildingVariance = new Vector3(Random.Range(-1,1), 0, Random.Range(-1,1));
-                        Instantiate(buildings[0],pos+buildingVariance,Quaternion.identity);
+                        buildingVariance = new Vector3(Random.Range(-1,1), 1.5f, Random.Range(-1,1));
+                        Quaternion rot = Quaternion.Euler(-90, 0, 0);
+                        Instantiate(buildings[0],pos+buildingVariance,Quaternion.identity * rot);
                     }
                     else
                     {
-                        Instantiate(buildings[0],pos,Quaternion.identity);
+                        buildingVariance = new Vector3(0, 1.5f, 0);
+                        Quaternion rot = Quaternion.Euler(-90, 0, 0);
+                        Instantiate(buildings[0],pos+buildingVariance,Quaternion.identity * rot);
                     }
                 }
                 else if(result < 2)
