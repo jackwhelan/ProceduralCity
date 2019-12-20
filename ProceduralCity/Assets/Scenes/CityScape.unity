@@ -312,14 +312,18 @@ MonoBehaviour:
   mapWidth: 100
   mapHeight: 100
   seed: 0
-  xRoadFrequency: 34
-  zRoadFrequency: 34
-  buildingSpacing: 3
-  Enable_Random_Seed: 1
-  Enable_Trees: 1
-  Enable_Tree_Position_Variance: 1
-  Enable_Building_Position_Variance: 1
-  Enable_Park_Benches: 1
+  xRoadAmount: 50
+  zRoadAmount: 50
+  xRoadFrequencyMin: 3
+  xRoadFrequencyMax: 3
+  zRoadFrequencyMin: 6
+  zRoadFrequencyMax: 6
+  buildingSpacing: 4
+  enableRandomSeed: 1
+  enableTrees: 1
+  enableTreePositionVariance: 1
+  enableBuildingPositionVariance: 1
+  enableParkBenches: 1
 --- !u!4 &1527545343
 Transform:
   m_ObjectHideFlags: 0
