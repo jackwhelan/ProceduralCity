@@ -295,8 +295,8 @@ MonoBehaviour:
   features:
   - {fileID: 4009041971192462610, guid: 1642b34265805b74fa545f930a700e69, type: 3}
   - {fileID: 110723329848874932, guid: 39dd2283d6cf63c4f83cc7d91176f96b, type: 3}
-  - {fileID: 1000062295325593964, guid: d2222ec1f38319e4387c0eaf1d65942f, type: 3}
   - {fileID: 4565784606525483216, guid: a92f018c8af7db54c96afc8fd747c291, type: 3}
+  - {fileID: 1000062295325593964, guid: d2222ec1f38319e4387c0eaf1d65942f, type: 3}
   - {fileID: 6088403477056691035, guid: 167ea1bea6308cf43891d35e0a1654f1, type: 3}
   - {fileID: 8838534779758578044, guid: 2d41ce7670f55f948b5238d72623d39f, type: 3}
   - {fileID: 4244904591838342327, guid: cabf5d6028e31b24db2db038ca63fd63, type: 3}
@@ -309,21 +309,22 @@ MonoBehaviour:
   zStreet: {fileID: 3864766855012573061, guid: 15448619ed9faa045b94a02c538532c3, type: 3}
   CrossRoad: {fileID: 1493181676200653643, guid: 026971da5be4ad5498963f39a24eeed3,
     type: 3}
-  mapWidth: 100
-  mapHeight: 100
+  mapWidth: 150
+  mapHeight: 150
   seed: 0
   xRoadAmount: 50
   zRoadAmount: 50
   xRoadFrequencyMin: 3
   xRoadFrequencyMax: 3
-  zRoadFrequencyMin: 6
-  zRoadFrequencyMax: 6
+  zRoadFrequencyMin: 8
+  zRoadFrequencyMax: 8
   buildingSpacing: 4
   enableRandomSeed: 1
   enableTrees: 1
   enableTreePositionVariance: 1
   enableBuildingPositionVariance: 1
   enableParkBenches: 1
+  enableMultipleTreeTypes: 1
 --- !u!4 &1527545343
 Transform:
   m_ObjectHideFlags: 0

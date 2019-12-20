@@ -132,7 +132,7 @@ public class BuildCity : MonoBehaviour
                 {
                     if(enableBuildingPositionVariance)
                     {
-                        buildingVariance = new Vector3(Random.Range(-1,1), 1.5f, Random.Range(-1,1));
+                        buildingVariance = new Vector3(Random.Range(-1,1), 0, Random.Range(-1,1));
                         Instantiate(features[0],pos+buildingVariance,Quaternion.identity);
                     }
                     else
