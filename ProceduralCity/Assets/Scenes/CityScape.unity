@@ -294,19 +294,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   features:
   - {fileID: 4009041971192462610, guid: 1642b34265805b74fa545f930a700e69, type: 3}
-  - {fileID: 147108, guid: 3d01ef65dd7df27469c08a5faaf917bd, type: 3}
+  - {fileID: 110723329848874932, guid: 39dd2283d6cf63c4f83cc7d91176f96b, type: 3}
   - {fileID: 151704, guid: 43cefcf568e58d84d802bbb3c6a74777, type: 3}
   - {fileID: 189348, guid: d597a8fa6b192c545bbae896e4d42a21, type: 3}
   - {fileID: 117616, guid: b2fcb4869e568194ebff11fc13530282, type: 3}
   - {fileID: 8838534779758578044, guid: 2d41ce7670f55f948b5238d72623d39f, type: 3}
   - {fileID: 4244904591838342327, guid: cabf5d6028e31b24db2db038ca63fd63, type: 3}
+  - {fileID: 4573625592445160380, guid: a0fd47919d5996b4b8d1688a974d2b0f, type: 3}
   trees:
   - {fileID: 8248429156366729026, guid: 03ff2b8d88bb72241b46a2841db90afc, type: 3}
   - {fileID: 8248429156366729026, guid: c357b11c787ef5b4fbd1b9241fb9ff7e, type: 3}
   - {fileID: 8248429156366729026, guid: 23b571633efae814080cbd887e3bced8, type: 3}
-  xStreet: {fileID: 192090369971904977, guid: 85b0fa4a038df06429f6ee8c27e1d65f, type: 3}
-  zStreet: {fileID: 5524751970038805599, guid: 57cc9daf1a5bef84383e13c71ce2ad86, type: 3}
-  CrossRoad: {fileID: 8555397460007563000, guid: aeeecfdb72d6b6244af848aedbc8dd63,
+  xStreet: {fileID: 8607989387789908834, guid: 4417116f56776fb4a8075ba9c5ac445c, type: 3}
+  zStreet: {fileID: 3864766855012573061, guid: 15448619ed9faa045b94a02c538532c3, type: 3}
+  CrossRoad: {fileID: 1493181676200653643, guid: 026971da5be4ad5498963f39a24eeed3,
     type: 3}
   mapWidth: 200
   mapHeight: 200
@@ -314,7 +315,7 @@ MonoBehaviour:
   Enable_Trees: 1
   Enable_Tree_Position_Variance: 1
   Enable_Building_Position_Variance: 0
-  Enable_Park_Benches: 1
+  Enable_Park_Benches: 0
 --- !u!4 &1527545343
 Transform:
   m_ObjectHideFlags: 0
