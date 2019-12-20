@@ -25,9 +25,9 @@ The main reason I decided to do procedural city generation as my project is I am
 - [x] Add a character to explore the generations.
 - [x] Add park/grassy areas to the generations.
 - [x] Add roads/streets to the generations which will punctuate the buildings and parks.
-- [ ] Create models for buildings, roads, etc. to replace placeholder objects.
-- [ ] Attempt to add street lights/bins etc. to the sidewalks.
-- [ ] Increase the complexity of generations through the introduction of my own personal algorithms/functions.
+- [x] Create models for buildings, roads, etc. to replace placeholder objects.
+- [x] Attempt to add details to the sidewalks, e.g. benches.
+- [x] Increase the complexity of generations through the introduction of my own personal algorithms/functions.
 - [ ] Add to the detail of city by adding characters/vehicles that traverse the city/streets.
 
 ---
