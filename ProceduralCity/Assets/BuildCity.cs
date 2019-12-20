@@ -57,49 +57,49 @@ public class BuildCity : MonoBehaviour
             seed = Random.Range(0, 1000);
         }
 
-        for(int h = 0; h < mapHeight; h++)
+        for(int Height = 0; Height < mapHeight; Height++)
         {
-            for(int w = 0; w < mapWidth; w++)
+            for(int Width = 0; Width < mapWidth; Width++)
             {
-                map[w,h] = (int) (Mathf.PerlinNoise(w / 10.0f + seed, h / 10.0f + seed) * 10);
+                map[Width,Height] = (int)(Mathf.PerlinNoise(Width / 10.0f + seed, Height / 10.0f + seed) * 10);
             }
         }
 
-        int x = 0;
-        for (int n = 0; n < xRoadAmount; n++)
+        int xFreq = 0;
+        for (int amt = 0; amt < xRoadAmount; amt++)
         {
-            for (int h = 0; h < mapHeight; h++)
+            for (int Height = 0; Height < mapHeight; Height++)
             {
-                map[x,h] = -1;
+                map[xFreq,Height] = -1;
             }
-            x += Random.Range(xRoadFrequencyMin,xRoadFrequencyMax);
-            if(x >= mapWidth) break;
+            xFreq += Random.Range(xRoadFrequencyMin,xRoadFrequencyMax);
+            if(xFreq >= mapWidth) break;
         }
 
-        int z = 0;
-        for (int n = 0; n < zRoadAmount; n++)
+        int zFreq = 0;
+        for (int amt = 0; amt < zRoadAmount; amt++)
         {
-            for (int w = 0; w < mapWidth; w++)
+            for (int Width = 0; Width < mapWidth; Width++)
             {
-                if (map[w,z] == -1)
+                if (map[Width,zFreq] == -1)
                 {
-                    map[w,z] = -3;
+                    map[Width,zFreq] = -3;
                 }
                 else
                 {
-                    map[w,z] = -2;
+                    map[Width,zFreq] = -2;
                 }
             }
-            z += Random.Range(zRoadFrequencyMin,zRoadFrequencyMax);
-            if(z >= mapHeight) break;
+            zFreq += Random.Range(zRoadFrequencyMin,zRoadFrequencyMax);
+            if(zFreq >= mapHeight) break;
         }
 
-        for(int h = 0; h < mapHeight; h++)
+        for(int Height = 0; Height < mapHeight; Height++)
         {
-            for(int w = 0; w < mapWidth; w++)
+            for(int Width = 0; Width < mapWidth; Width++)
             {
-                int currentLocation = map[w,h];
-                Vector3 pos = new Vector3(w * buildingSpacing, 0, h * buildingSpacing);
+                int currentLocation = map[Width,Height];
+                Vector3 pos = new Vector3(Width * buildingSpacing, 0, Height * buildingSpacing);
                 if(currentLocation < -2)
                 {
                     Instantiate(CrossRoad,pos,CrossRoad.transform.rotation);
