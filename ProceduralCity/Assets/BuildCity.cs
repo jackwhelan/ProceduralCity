@@ -1,9 +1,10 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BuildCity : MonoBehaviour
 {
+    [Header("Model Configuration")]
     public GameObject[] features;
     public GameObject[] trees;
     public GameObject xStreet;
@@ -11,16 +12,40 @@ public class BuildCity : MonoBehaviour
     public GameObject CrossRoad;
     Vector3 buildingVariance;
     Vector3 treePosVariance;
+    [Space]
+
+    [Header("Map Generation")]
+    [Range(0, 250)]
     public int mapWidth = 200;
+    [Range(0, 250)]
     public int mapHeight = 200;
+    [Range(0, 1000)]
     public float seed = 0;
-    public int[,] map;
+    [Range(0, 100)]
+    public int xRoadAmount = 50;
+    [Range(0, 100)]
+    public int zRoadAmount = 50;
+    [Range(0,100)]
+    public int xRoadFrequencyMin = 3;
+    [Range(0,100)]
+    public int xRoadFrequencyMax = 3;
+    [Range(0,100)]
+    public int zRoadFrequencyMin = 2;
+    [Range(0,100)]
+    public int zRoadFrequencyMax = 20;
+    [Range(0, 5)]
     public int buildingSpacing = 4;
-    public bool Enable_Random_Seed = true;
-    public bool Enable_Trees = true;
-    public bool Enable_Tree_Position_Variance = true;
-    public bool Enable_Building_Position_Variance = true;
-    public bool Enable_Park_Benches = true;
+    [Space]
+    
+    [Header("Enable/Disable Features")]
+    public bool enableRandomSeed = true;
+    public bool enableTrees = true;
+    public bool enableTreePositionVariance = true;
+    public bool enableBuildingPositionVariance = true;
+    public bool enableParkBenches = true;
+
+    [HideInInspector]
+    public int[,] map;
     
 
     void Start()

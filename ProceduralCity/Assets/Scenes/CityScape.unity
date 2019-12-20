@@ -311,7 +311,11 @@ MonoBehaviour:
     type: 3}
   mapWidth: 100
   mapHeight: 100
-  buildingSpacing: 4
+  seed: 0
+  xRoadFrequency: 34
+  zRoadFrequency: 34
+  buildingSpacing: 3
+  Enable_Random_Seed: 1
   Enable_Trees: 1
   Enable_Tree_Position_Variance: 1
   Enable_Building_Position_Variance: 1
