@@ -111,14 +111,15 @@ public class BuildCity : MonoBehaviour
                 }
                 else if(currentLocation < 2)
                 {
+                    Quaternion scraperRot = Quaternion.Euler(0, -90, 0);
                     if(Enable_Building_Position_Variance)
                     {
                         buildingVariance = new Vector3(Random.Range(-1,1), 0, Random.Range(-1,1));
-                        Instantiate(features[1],pos+buildingVariance,Quaternion.identity);
+                        Instantiate(features[1],pos+buildingVariance,Quaternion.identity * scraperRot);
                     }
                     else
                     {
-                        Instantiate(features[1],pos,Quaternion.identity);
+                        Instantiate(features[1],pos,Quaternion.identity * scraperRot);
                     }
                 }
                 else if(currentLocation < 4)
