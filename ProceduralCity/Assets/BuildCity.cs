@@ -163,14 +163,29 @@ public class BuildCity : MonoBehaviour
                     int hasTree = Random.Range(0,2);
                     if (hasTree == 0 && Enable_Trees)
                     {
-                        if (Enable_Tree_Position_Variance)
+                        int treeType = Random.Range(0,10);
+                        GameObject treeToUse;
+                        if (treeType < 2)
                         {
-                            treePosVariance = new Vector3(Random.Range(-1,1), 0, Random.Range(-1,1));
-                            Instantiate(trees[0], pos+treePosVariance, Quaternion.identity);
+                            treeToUse = trees[2];
+                        }
+                        else if (treeType < 5)
+                        {
+                            treeToUse = trees[1];
                         }
                         else
                         {
-                            Instantiate(trees[0], pos, Quaternion.identity);
+                            treeToUse = trees[0];
+                        }
+
+                        if (Enable_Tree_Position_Variance)
+                        {
+                            treePosVariance = new Vector3(Random.Range(-1,1), 0, Random.Range(-1,1));
+                            Instantiate(treeToUse, pos+treePosVariance, Quaternion.identity);
+                        }
+                        else
+                        {
+                            Instantiate(treeToUse, pos, Quaternion.identity);
                         }
                     }
                 }
