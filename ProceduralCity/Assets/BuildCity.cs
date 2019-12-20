@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,7 +26,7 @@ public class BuildCity : MonoBehaviour
     void Start()
     {
         map = new int[mapWidth, mapHeight];
-        if (Enable_Random_Seed)
+        if (enableRandomSeed)
         {
             seed = Random.Range(0, 1000);
         }
@@ -40,18 +40,18 @@ public class BuildCity : MonoBehaviour
         }
 
         int x = 0;
-        for (int n = 0; n < 50; n++)
+        for (int n = 0; n < xRoadAmount; n++)
         {
             for (int h = 0; h < mapHeight; h++)
             {
                 map[x,h] = -1;
             }
-            x += Random.Range(3,3);
+            x += Random.Range(xRoadFrequencyMin,xRoadFrequencyMax);
             if(x >= mapWidth) break;
         }
 
         int z = 0;
-        for (int n = 0; n < 10; n++)
+        for (int n = 0; n < zRoadAmount; n++)
         {
             for (int w = 0; w < mapWidth; w++)
             {
@@ -64,7 +64,7 @@ public class BuildCity : MonoBehaviour
                     map[w,z] = -2;
                 }
             }
-            z += Random.Range(2,20);
+            z += Random.Range(zRoadFrequencyMin,zRoadFrequencyMax);
             if(z >= mapHeight) break;
         }
 
@@ -81,7 +81,7 @@ public class BuildCity : MonoBehaviour
                 else if(currentLocation < -1)
                 {
                     Instantiate(xStreet,pos,xStreet.transform.rotation);
-                    if(Enable_Park_Benches)
+                    if(enableParkBenches)
                     {
                         Quaternion benchRot = Quaternion.Euler(-90, -90, 0);
                         if(Random.Range(0, 10) >= 9)
@@ -93,7 +93,7 @@ public class BuildCity : MonoBehaviour
                 else if(currentLocation < 0)
                 {
                     Instantiate(zStreet,pos,zStreet.transform.rotation);
-                    if(Enable_Park_Benches)
+                    if(enableParkBenches)
                     {
                         Quaternion benchRot = Quaternion.Euler(-90, 0, 0);
                         if(Random.Range(0, 10) >= 9)
@@ -104,7 +104,7 @@ public class BuildCity : MonoBehaviour
                 }
                 else if(currentLocation < 1)
                 {
-                    if(Enable_Building_Position_Variance)
+                    if(enableBuildingPositionVariance)
                     {
                         buildingVariance = new Vector3(Random.Range(-1,1), 1.5f, Random.Range(-1,1));
                         Instantiate(features[0],pos+buildingVariance,Quaternion.identity);
@@ -118,7 +118,7 @@ public class BuildCity : MonoBehaviour
                 else if(currentLocation < 2)
                 {
                     Quaternion scraperRot = Quaternion.Euler(0, -90, 0);
-                    if(Enable_Building_Position_Variance)
+                    if(enableBuildingPositionVariance)
                     {
                         buildingVariance = new Vector3(Random.Range(-1,1), 0, Random.Range(-1,1));
                         Instantiate(features[1],pos+buildingVariance,Quaternion.identity * scraperRot);
@@ -130,7 +130,7 @@ public class BuildCity : MonoBehaviour
                 }
                 else if(currentLocation < 4)
                 {
-                    if(Enable_Building_Position_Variance)
+                    if(enableBuildingPositionVariance)
                     {
                         buildingVariance = new Vector3(Random.Range(-1,1), 0, Random.Range(-1,1));
                         Instantiate(features[2],pos+buildingVariance,Quaternion.identity);
@@ -142,7 +142,7 @@ public class BuildCity : MonoBehaviour
                 }
                 else if(currentLocation < 6)
                 {
-                    if(Enable_Building_Position_Variance)
+                    if(enableBuildingPositionVariance)
                     {
                         buildingVariance = new Vector3(Random.Range(-1,1), 0, Random.Range(-1,1));
                         Instantiate(features[3],pos+buildingVariance,Quaternion.identity);
@@ -154,7 +154,7 @@ public class BuildCity : MonoBehaviour
                 }
                 else if(currentLocation < 7)
                 {
-                    if(Enable_Building_Position_Variance)
+                    if(enableBuildingPositionVariance)
                     {
                         buildingVariance = new Vector3(Random.Range(-1,1), 0, Random.Range(-1,1));
                         Instantiate(features[4],pos+buildingVariance,Quaternion.identity);
@@ -168,7 +168,7 @@ public class BuildCity : MonoBehaviour
                 {
                     Instantiate(features[5],pos,Quaternion.identity);
                     int hasTree = Random.Range(0,2);
-                    if (hasTree == 0 && Enable_Trees)
+                    if (hasTree == 0 && enableTrees)
                     {
                         int treeType = Random.Range(0,10);
                         GameObject treeToUse;
@@ -185,7 +185,7 @@ public class BuildCity : MonoBehaviour
                             treeToUse = trees[0];
                         }
 
-                        if (Enable_Tree_Position_Variance)
+                        if (enableTreePositionVariance)
                         {
                             treePosVariance = new Vector3(Random.Range(-1,1), 0, Random.Range(-1,1));
                             Instantiate(treeToUse, pos+treePosVariance, Quaternion.identity);
