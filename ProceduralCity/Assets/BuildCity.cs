@@ -11,8 +11,8 @@ public class BuildCity : MonoBehaviour
     public GameObject CrossRoad;
     Vector3 buildingVariance;
     Vector3 treePosVariance;
-    public int mapWidth = 20;
-    public int mapHeight = 20;
+    public int mapWidth = 200;
+    public int mapHeight = 200;
     public int[,] map;
     public int buildingSpacing = 4;
     public bool Enable_Trees = true;
@@ -66,13 +66,13 @@ public class BuildCity : MonoBehaviour
         {
             for(int w = 0; w < mapWidth; w++)
             {
-                int result = map[w,h];
+                int currentLocation = map[w,h];
                 Vector3 pos = new Vector3(w * buildingSpacing, 0, h * buildingSpacing);
-                if(result < -2)
+                if(currentLocation < -2)
                 {
                     Instantiate(CrossRoad,pos,CrossRoad.transform.rotation);
                 }
-                else if(result < -1)
+                else if(currentLocation < -1)
                 {
                     Instantiate(xStreet,pos,xStreet.transform.rotation);
                     if(Enable_Park_Benches)
@@ -84,7 +84,7 @@ public class BuildCity : MonoBehaviour
                         }
                     }
                 }
-                else if(result < 0)
+                else if(currentLocation < 0)
                 {
                     Instantiate(zStreet,pos,zStreet.transform.rotation);
                     if(Enable_Park_Benches)
@@ -96,7 +96,7 @@ public class BuildCity : MonoBehaviour
                         }
                     }
                 }
-                else if(result < 1)
+                else if(currentLocation < 1)
                 {
                     if(Enable_Building_Position_Variance)
                     {
@@ -109,7 +109,7 @@ public class BuildCity : MonoBehaviour
                         Instantiate(features[0],pos+buildingVariance,Quaternion.identity);
                     }
                 }
-                else if(result < 2)
+                else if(currentLocation < 2)
                 {
                     if(Enable_Building_Position_Variance)
                     {
@@ -121,7 +121,7 @@ public class BuildCity : MonoBehaviour
                         Instantiate(features[1],pos,Quaternion.identity);
                     }
                 }
-                else if(result < 4)
+                else if(currentLocation < 4)
                 {
                     if(Enable_Building_Position_Variance)
                     {
@@ -133,7 +133,7 @@ public class BuildCity : MonoBehaviour
                         Instantiate(features[2],pos,Quaternion.identity);
                     }
                 }
-                else if(result < 6)
+                else if(currentLocation < 6)
                 {
                     if(Enable_Building_Position_Variance)
                     {
@@ -145,7 +145,7 @@ public class BuildCity : MonoBehaviour
                         Instantiate(features[3],pos,Quaternion.identity);
                     }
                 }
-                else if(result < 7)
+                else if(currentLocation < 7)
                 {
                     if(Enable_Building_Position_Variance)
                     {
@@ -157,7 +157,7 @@ public class BuildCity : MonoBehaviour
                         Instantiate(features[4],pos,Quaternion.identity);
                     }
                 }
-                else if(result < 10)
+                else if(currentLocation < 10)
                 {
                     Instantiate(features[5],pos,Quaternion.identity);
                     int hasTree = Random.Range(0,2);
