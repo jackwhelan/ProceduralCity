@@ -5,6 +5,8 @@
 ### **Program Code |** DT211C/4
 ### **Project Title |** *Procedural Cityscape Generation in Unity3D*
 
+![Preview of the Generations](Procedural_City_Preview.png)
+
 ---
 
 ## Summary
