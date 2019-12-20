@@ -43,6 +43,7 @@ public class BuildCity : MonoBehaviour
     public bool enableTreePositionVariance = true;
     public bool enableBuildingPositionVariance = true;
     public bool enableParkBenches = true;
+    public bool enableMultipleTreeTypes = true;
 
     [HideInInspector]
     public int[,] map;
@@ -197,11 +198,11 @@ public class BuildCity : MonoBehaviour
                     {
                         int treeType = Random.Range(0,10);
                         GameObject treeToUse;
-                        if (treeType < 2)
+                        if (treeType < 2 && enableMultipleTreeTypes)
                         {
                             treeToUse = trees[2];
                         }
-                        else if (treeType < 5)
+                        else if (treeType < 5 && enableMultipleTreeTypes)
                         {
                             treeToUse = trees[1];
                         }
