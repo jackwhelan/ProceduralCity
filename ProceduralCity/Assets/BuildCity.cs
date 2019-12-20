@@ -13,17 +13,23 @@ public class BuildCity : MonoBehaviour
     Vector3 treePosVariance;
     public int mapWidth = 200;
     public int mapHeight = 200;
+    public float seed = 0;
     public int[,] map;
     public int buildingSpacing = 4;
+    public bool Enable_Random_Seed = true;
     public bool Enable_Trees = true;
     public bool Enable_Tree_Position_Variance = true;
     public bool Enable_Building_Position_Variance = true;
     public bool Enable_Park_Benches = true;
+    
 
     void Start()
     {
         map = new int[mapWidth, mapHeight];
-        float seed = Random.Range(0, 1000);
+        if (Enable_Random_Seed)
+        {
+            seed = Random.Range(0, 1000);
+        }
 
         for(int h = 0; h < mapHeight; h++)
         {
