@@ -6,13 +6,13 @@
 ### **Project Title |** *Procedural Cityscape Generation in Unity3D*
 
 Preview of the Generations
-[![Preview of the Generations](https://github.com/jackwhelan/ProceduralCity/blob/master/Procedural_City_Preview.PNG)](https://www.youtube.com/watch?v=RDSu8uW4eJE)
+[![Preview of the Generations](https://github.com/jackwhelan/ProceduralCity/blob/master/Procedural_City_Preview.PNG)](https://www.youtube.com/watch?v=RDSu8uW4eJE&list=PLcnCT5slUR-mZmf35sghvyM6-TMOa4jMe&index=3)
 
 FAST DEMO
-[![FAST DEMO](https://github.com/jackwhelan/ProceduralCity/blob/master/thumb2.PNG)](https://www.youtube.com/watch?v=RDSu8uW4eJE)
+[![FAST DEMO](https://github.com/jackwhelan/ProceduralCity/blob/master/thumb2.PNG)](https://www.youtube.com/watch?v=h1V2ZAS3ekk&list=PLcnCT5slUR-mZmf35sghvyM6-TMOa4jMe&index=2)
 
 FULL DEMO
-[![FULL DEMO](https://github.com/jackwhelan/ProceduralCity/blob/master/thumb3.PNG)](https://www.youtube.com/watch?v=RDSu8uW4eJE)
+[![FULL DEMO](https://github.com/jackwhelan/ProceduralCity/blob/master/thumb3.PNG)](https://www.youtube.com/watch?v=gRI84GVC6Qw&list=PLcnCT5slUR-mZmf35sghvyM6-TMOa4jMe&index=1)
 
 ---
 
