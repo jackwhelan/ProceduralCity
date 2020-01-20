@@ -5,7 +5,14 @@
 ### **Program Code |** DT211C/4
 ### **Project Title |** *Procedural Cityscape Generation in Unity3D*
 
+Preview of the Generations
 [![Preview of the Generations](https://github.com/jackwhelan/ProceduralCity/blob/master/Procedural_City_Preview.PNG)](https://www.youtube.com/watch?v=RDSu8uW4eJE)
+
+FAST DEMO
+[![FAST DEMO](https://github.com/jackwhelan/ProceduralCity/blob/master/thumb2.PNG)](https://www.youtube.com/watch?v=RDSu8uW4eJE)
+
+FULL DEMO
+[![FULL DEMO](https://github.com/jackwhelan/ProceduralCity/blob/master/thumb3.PNG)](https://www.youtube.com/watch?v=RDSu8uW4eJE)
 
 ---
 
