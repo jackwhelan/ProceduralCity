@@ -1,18 +1,8 @@
 # ProceduralCity
-
-### **Student Name |** Jack Whelan
-### **Student Number |** C16499636
-### **Program Code |** DT211C/4
-### **Project Title |** *Procedural Cityscape Generation in Unity3D*
+### *Procedural Cityscape Generation in Unity3D*
 
 Preview of the Generations
 [![Preview of the Generations](https://github.com/jackwhelan/ProceduralCity/blob/master/Procedural_City_Preview.PNG)](https://www.youtube.com/watch?v=RDSu8uW4eJE&list=PLcnCT5slUR-mZmf35sghvyM6-TMOa4jMe&index=3)
-
-FAST DEMO
-[![FAST DEMO](https://github.com/jackwhelan/ProceduralCity/blob/master/thumb2.PNG)](https://www.youtube.com/watch?v=h1V2ZAS3ekk&list=PLcnCT5slUR-mZmf35sghvyM6-TMOa4jMe&index=2)
-
-FULL DEMO
-[![FULL DEMO](https://github.com/jackwhelan/ProceduralCity/blob/master/thumb3.PNG)](https://www.youtube.com/watch?v=gRI84GVC6Qw&list=PLcnCT5slUR-mZmf35sghvyM6-TMOa4jMe&index=1)
 
 ---
 
@@ -26,7 +16,7 @@ The CityScape generator runs on the "BuildCity.cs" script. This script begins by
 
 ## My Work
 
-It was important to me to do this myself as I am very interested in Game Design and procedural generation. For this reason the vast majority of what I have done I have done from scratch. Every single model used, the buildings, grass areas, roads etc. were all modelled in blender. I didn't know how to use blender before this assignment, I am now very familiar with it and am comfortable using the keybinds and shortcuts. As for the code, I planned to use a map grid from the start but I got the idea to use negative integers overwriting the noise map in order to inject roads into the generation from a tutorial on youtube by Holistic3D. I am very proud of how the mapping system worked out and how seamlessly the roads are generated. I really enjoyed coming up with a solution for the generation of benches on the sides of roads; ensuring they always faced the street using Quaternion rotations. I also really liked the mini feature of positional variance, this gives the generations a more natural look despite being generated on a grid. I also am very proud of how I managed Tree generation and park areas, limiting it to park areas, and making the distribution natural. The Park areas are seamless and look natural.
+I am very interested in Game Design and procedural generation. I modelled every single model used, the buildings, grass areas, roads etc. in blender. I didn't know how to use blender before this assignment and it shows in the amateurish models, however I am now very familiar with it and am comfortable using the keybinds and shortcuts. As for the code, I planned to use a map grid from the start but I got the idea to use negative integers overwriting the noise map in order to inject roads into the generation from a tutorial on youtube by Holistic3D. I am very proud of how the mapping system worked out and how seamlessly the roads are generated. I really enjoyed coming up with a solution for the generation of benches on the sides of roads; ensuring they always faced the street using Quaternion rotations. I also really liked the mini feature of positional variance, this gives the generations a more natural look despite being generated on a grid. I also am very proud of how I managed Tree generation and park areas, limiting it to park areas, and making the distribution natural. The Park areas are seamless and look natural.
 
 ---
 
